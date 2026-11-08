@@ -158,7 +158,7 @@ export const EditorialColumnRight: React.FC = () => {
               Computing Systems Architecture
             </span>
             <span className="text-[8px] bg-ocean-700/80 px-2 py-0.5 rounded font-mono text-ocean-200 ml-auto">
-              SSE-2601 Case
+              Islam's Case
             </span>
           </div>
 
