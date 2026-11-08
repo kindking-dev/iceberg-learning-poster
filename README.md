@@ -1,18 +1,47 @@
 # The Iceberg of Learning: What Lies Beneath a High Grade?
-## Premium Academic Conference Poster (A1 Landscape • 841 mm × 594 mm)
+## Premium 3D Interactive & Academic Conference Poster (ISO 216 A1 Landscape • 841 mm × 594 mm)
 
-### Academic Context
-- **Course:** Higher Education Pedagogy
-- **Degree Program:** Master's Degree Program, Department of General Education Disciplines
-- **Institution:** Astana IT University
-- **Group:** SSE-2601
-- **Academic Year:** 2026
-- **Research Question:** *"Do high grades necessarily reflect actual understanding and the ability to apply knowledge?"*
-- **Central Thesis:** A high grade is visible evidence of performance, but it cannot independently demonstrate the full depth of student learning. Meaningful learning goes deeper.
+### Overview
+This project presents an award-winning academic conference poster and interactive 3D web experience developed for **Astana IT University** (Course: *Pedagogy of Higher Education*, Academic Year 2026).
+
+It investigates the central pedagogical question:
+> **"Do high grades necessarily reflect actual understanding and the ability to apply knowledge?"**
+
+Anchored by the metaphor of the iceberg:
+- **Above the Water (~10% visible):** Surface Academic Performance, examination marks, and formulaic reproduction.
+- **Submerged Below (~90% deeper):** Conceptual Understanding, Practical Application, Critical Thinking, and Durable Long-Term Retention.
+- **Key Takeaway:** *"A high grade is visible. Meaningful learning goes deeper."*
+- **Final Consensus:** *"Grades should measure learning — not define its limits."*
 
 ---
 
-### Authors & Research Contributions
+### Key Architectural Highlights
+1. **Photorealistic 3D Crystalline Iceberg (`Three.js`):**
+   - Procedural crystalline geometry with 5 depth strata corresponding to learning dimensions.
+   - Realistic sunlight reflections, turquoise subsurface scattering, and deep ocean fog.
+   - Dynamic real-time ocean wave ripples and suspended particulate drift.
+   - Interactive rotation controls via mouse drag, touch gestures, and subtle gyroscope/mouse parallax.
+2. **Interactive 5-Layer Stratum Explorer:**
+   - **Level 1 (Surface • 0 m):** Academic Performance (exam scores, correct answers, reproduction).
+   - **Level 2 (Depth • -150 m):** Conceptual Understanding (explaining in own words, connecting concepts).
+   - **Level 3 (Depth • -350 m):** Practical Application (systems problem-solving, Computer Architecture CPU ↔ RAM bus interactions).
+   - **Level 4 (Depth • -550 m):** Critical Thinking (questioning assumptions, evaluating alternatives).
+   - **Level 5 (Depth • -800 m):** Long-Term Retention (durable schema, cross-domain knowledge transfer).
+   - Clicking any depth marker or 3D layer illuminates that stratum and opens a contextual educational drawer.
+3. **Procedural Web Audio Ocean Ambience:**
+   - Pure Web Audio API synthesis creating calming rhythmic ocean waves and wind.
+   - Zero external audio files required, completely local, off by default with clean toggle.
+4. **Cohesive Academic Editorial Design:**
+   - Balanced three-column composition: Left (Research & Theories), Centre (3D Iceberg Metaphor), Right (Analysis & HE Applications).
+   - Includes John Biggs (1996) Constructive Alignment flow, Paulo Freire (2000) Problem-Posing vs Banking education, Grabinger & Dunlap (1995) REAL framework, Formative Feedback Cycle, and balanced comparison of Examinations vs Projects.
+   - Verified APA 7th Edition bibliography and individual contributor attribution strip.
+5. **Separate Static Print & A1 PDF Layout:**
+   - Exact ISO 216 A1 Landscape (841 mm × 594 mm) single-page print stylesheet.
+   - Automated export script producing `poster-a1.pdf` and `poster-preview.png`.
+
+---
+
+### Authors & Research Roles (SSE-2601)
 - **Nikita Shulmin** — Academic performance, memorisation-based assessment, practical assessment, and feedback.
 - **Dana Kenzhebayeva** — Constructive alignment, practical judgment, educational philosophy, and the balance between structure and flexibility.
 - **Islam Akhmetov** — Practical learning, formative feedback, and theoretical knowledge applied to Computer Organisation and Architecture.
@@ -20,65 +49,38 @@
 
 ---
 
-### Key Sections (Aligned with Appendix 5)
-1. **Section 1 — Introduction and Background:** Hook scenario (`"You score 95/100. But can you still explain what you learned next week?"`), pedagogical significance, group position.
-2. **Section 2 — Key Arguments & Critical Analysis (The Iceberg Metaphor):**
-   - **Level 1 (Above Water):** Academic Performance (grades, reproduced definitions, test marks).
-   - **Level 2 (Submerged):** Conceptual Understanding (explain in own words, connect ideas).
-   - **Level 3 (Submerged):** Practical Application (systems problem-solving, Computer Architecture CPU ↔ RAM interaction).
-   - **Level 4 (Submerged):** Critical & Independent Thinking (questioning assumptions, evaluating trade-offs).
-   - **Level 5 (Submerged):** Long-Term Retention & Transfer (durable mastery across time).
-   - Critical comparison: Standardized Examinations vs. Authentic Practical Projects.
-3. **Theoretical Foundations:**
-   - **John Biggs (1996):** Constructive Alignment (Outcomes ↔ Activities ↔ Assessment).
-   - **Paulo Freire (2000):** Problem-Posing Education vs. Banking Model of Education.
-   - **Grabinger & Dunlap (1995):** Rich Environments for Active Learning (REAL).
-   - **Formative Feedback Cycle:** Assess → Feedback → Reflect → Improve.
-4. **Section 3 — Relevance and Application to Higher Education Practice:**
-   - Five-part assessment ecosystem: Examinations, Practical Projects, Case Studies, Presentations, and Formative Feedback.
-   - Computing Systems Architecture case study (CPU ↔ RAM bus interactions).
-   - 4 Evidence-informed recommendations for higher education institutions.
-5. **Section 4 — Conclusion:** Group synthesis & callout *"Grades should measure learning — not define its limits."*
-6. **Section 5 — References:** APA 7th Edition verified scholarly citations.
+### Verified APA 7th Edition Bibliography
+1. Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education, 32*(3), 347–364. https://doi.org/10.1007/BF00138871
+2. Freire, P. (2000). *Pedagogy of the oppressed* (30th anniversary ed.). Continuum.
+3. Grabinger, R. S., & Dunlap, J. C. (1995). Rich environments for active learning: A definition. *Research in Learning Technology, 3*(2), 5–34. https://doi.org/10.1080/0968776950030202
+4. Magnússon, G., & Rytzler, J. (2022). *Towards a pedagogy of higher education: The Bologna process, Didaktik and teaching*. Routledge. https://doi.org/10.4324/9781003054160
 
 ---
 
-### Getting Started
+### Installation & Commands
 
-#### Prerequisites
-- Node.js (v18+ recommended, verified on v26)
-- npm (v9+)
-
-#### Installation
 ```bash
+# 1. Install dependencies
 npm install
-```
 
-#### Running the Development Server
-```bash
+# 2. Start local development server (http://localhost:3000)
 npm run dev
-```
-Open your browser at `http://localhost:3000` to interact with the responsive web view and zoomable A1 canvas.
 
-#### Production Build
-```bash
+# 3. Build optimized production bundle
 npm run build
-```
-Creates an optimized static bundle in the `dist/` directory.
 
-#### Exporting A1 Landscape PDF & High-Resolution Preview PNG
-```bash
+# 4. Run automated academic & structural QA tests
+npm test
+
+# 5. Run multi-viewport responsiveness tests
+node scripts/test-responsive.mjs
+
+# 6. Export high-resolution PNG preview and 1-page A1 PDF
 npm run export
 ```
-This automated Playwright script starts the production preview server, loads all web fonts and vector illustrations, and generates:
-- `poster-a1.pdf` — Exactly 1-page ISO 216 A1 Landscape (841 mm × 594 mm) with print background enabled.
-- `poster-preview.png` — Ultra-high resolution visual preview.
 
 ---
 
-### How to Modify Content
-- **Poster Text & Structure:** Edit `src/data/posterContent.ts`.
-- **Scholarly Citations:** Edit `src/data/references.ts`.
-- **Iceberg Vector Illustration:** Edit `src/components/IcebergIllustration.tsx`.
-- **Print & Sizing Rules:** Edit `src/styles/print.css` and `src/styles/tokens.css`.
-
+### Generated Assets in Repository
+- `poster-a1.pdf` — Strictly 1-page ISO 216 A1 Landscape PDF ready for large-format print.
+- `poster-preview.png` — Ultra-high resolution visual preview.

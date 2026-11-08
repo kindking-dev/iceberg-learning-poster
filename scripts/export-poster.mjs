@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
 async function exportPoster() {
-  console.log('🚀 Starting A1 Poster Export Suite...');
+  console.log('🚀 Starting A1 Academic Poster Export Suite...');
 
   // Start Vite preview server for production build
   console.log('📦 Starting preview server for /dist...');
@@ -25,6 +25,13 @@ async function exportPoster() {
 
   const browser = await chromium.launch({
     headless: true,
+    args: [
+      '--enable-webgl',
+      '--use-gl=angle',
+      '--use-angle=gl',
+      '--ignore-gpu-blocklist',
+      '--no-sandbox',
+    ],
   });
 
   try {
@@ -36,13 +43,16 @@ async function exportPoster() {
     console.log(`🧭 Navigating to ${url}...`);
     await page.goto(url, { waitUntil: 'networkidle' });
 
-    // Wait for web fonts and SVG rendering
+    // Wait for web fonts
     await page.evaluate(async () => {
       await document.fonts.ready;
     });
-    await page.waitForTimeout(1500);
 
-    // 1. Export High-Resolution PNG Preview
+    // Wait for WebGL 3D scene to initialize and render frames
+    console.log('⏳ Waiting for 3D Iceberg scene initialization...');
+    await page.waitForTimeout(3000);
+
+    // 1. Export High-Resolution PNG Preview of the 3D Interactive Poster
     const previewPath = path.join(rootDir, 'poster-preview.png');
     console.log(`📸 Capturing high-resolution visual preview: ${previewPath}`);
     const posterElement = await page.$('.poster-container');
@@ -59,7 +69,7 @@ async function exportPoster() {
     }
     console.log('✅ poster-preview.png created successfully!');
 
-    // 2. Export Exact A1 Landscape PDF (841mm x 594mm)
+    // 2. Export Exact A1 Landscape PDF (841mm x 594mm) in print media
     const pdfPath = path.join(rootDir, 'poster-a1.pdf');
     console.log(`📄 Generating exact ISO A1 Landscape PDF (841mm × 594mm): ${pdfPath}`);
 
@@ -92,4 +102,3 @@ async function exportPoster() {
 }
 
 exportPoster();
-
