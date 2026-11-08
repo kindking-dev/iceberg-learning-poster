@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { posterMetadata, authors } from '../data/posterContent';
 import { oceanAudio } from '../utils/oceanAudio';
-import { GraduationCap, Volume2, VolumeX, Printer, Compass, Layers } from 'lucide-react';
+import { Volume2, VolumeX, Layers, Compass } from 'lucide-react';
 
 interface PosterHeaderProps {
-  onPrint: () => void;
   activeLevel: number | null;
   onResetLevel: () => void;
 }
 
 export const PosterHeader: React.FC<PosterHeaderProps> = ({
-  onPrint,
   activeLevel,
   onResetLevel,
 }) => {
@@ -27,15 +25,13 @@ export const PosterHeader: React.FC<PosterHeaderProps> = ({
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs tracking-wider uppercase font-semibold text-slate-muted border-b border-ocean-100 pb-2 mb-3">
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-ocean-900 text-white font-bold text-[10.5px]">
-            <GraduationCap className="w-3.5 h-3.5 text-teal-soft" />
+            <Compass className="w-3.5 h-3.5 text-teal-soft" />
             {posterMetadata.institution}
           </span>
           <span className="text-ocean-800 font-bold">{posterMetadata.course}</span>
-          <span className="text-slate-300">•</span>
-          <span className="hidden sm:inline">{posterMetadata.degreeProgram}</span>
         </div>
 
-        {/* Action Controls: Audio Toggle & Print */}
+        {/* Action Controls: Audio Toggle only */}
         <div className="flex items-center gap-2.5 no-print">
           {/* Sound Toggle (Ambient ocean atmosphere) */}
           <button
@@ -70,15 +66,6 @@ export const PosterHeader: React.FC<PosterHeaderProps> = ({
               <span>Reset 3D Depth</span>
             </button>
           )}
-
-          {/* Print PDF Button */}
-          <button
-            onClick={onPrint}
-            className="flex items-center gap-1.5 bg-gradient-to-r from-coral to-coral-dark text-white font-bold px-3.5 py-1 rounded-full shadow-xs hover:opacity-95 transition-all text-xs"
-          >
-            <Printer className="w-3.5 h-3.5" />
-            <span>Print / Export A1</span>
-          </button>
         </div>
       </div>
 
@@ -133,3 +120,4 @@ export const PosterHeader: React.FC<PosterHeaderProps> = ({
     </header>
   );
 };
+

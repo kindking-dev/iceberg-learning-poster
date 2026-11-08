@@ -1,7 +1,68 @@
 import React from 'react';
 import { apaReferences } from '../data/references';
 import { authors } from '../data/posterContent';
+import { ReferenceItem } from '../data/posterContent';
 import { BookOpen, ShieldCheck, UserCheck } from 'lucide-react';
+
+/**
+ * Render one APA 7 reference correctly:
+ *
+ * Journal article:
+ *   Author, A. (Year). Title of article. *Journal Name*, *Volume*(Issue), pages. https://doi.org/xxx
+ *
+ * Book:
+ *   Author, A. (Year). *Title of book* (Xth ed.). Publisher. https://doi.org/xxx
+ *
+ * We distinguish book vs. journal by presence of volume/issue pattern in `source`.
+ */
+function renderAPA7(ref: ReferenceItem) {
+  // Detect if source looks like a journal citation: "Journal Name, vol(issue), pages"
+  const isJournal = /,\s*\d+\(/.test(ref.source);
+
+  if (isJournal) {
+    // Split: "Higher Education, 32(3), 347–364" → journal part + vol/pages
+    // We italic the journal name + volume
+    const commaIdx = ref.source.indexOf(',');
+    const journalName = ref.source.substring(0, commaIdx);
+    const volPages = ref.source.substring(commaIdx); // ", 32(3), 347–364"
+    return (
+      <>
+        <span className="font-semibold">{ref.authors}</span>
+        {' '}({ref.year}). {ref.title}. <em>{journalName}</em>
+        <em>{volPages}</em>.{' '}
+        {ref.doi && (
+          <a
+            href={ref.doi}
+            target="_blank"
+            rel="noreferrer"
+            className="text-ocean-600 hover:text-ocean-800 underline font-mono text-[9px] break-all"
+          >
+            {ref.doi}
+          </a>
+        )}
+      </>
+    );
+  }
+
+  // Book
+  return (
+    <>
+      <span className="font-semibold">{ref.authors}</span>
+      {' '}({ref.year}). <em>{ref.title}</em>
+      {ref.edition ? ` (${ref.edition})` : ''}. {ref.source}.{' '}
+      {ref.doi && (
+        <a
+          href={ref.doi}
+          target="_blank"
+          rel="noreferrer"
+          className="text-ocean-600 hover:text-ocean-800 underline font-mono text-[9px] break-all"
+        >
+          {ref.doi}
+        </a>
+      )}
+    </>
+  );
+}
 
 export const PosterFooter: React.FC = () => {
   return (
@@ -22,24 +83,12 @@ export const PosterFooter: React.FC = () => {
 
       {/* Grid: Left is APA References, Right is Contributor Roles */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start text-xs">
-        {/* Left: 4 Verified APA 7 Citations */}
+        {/* Left: APA 7 Citations */}
         <div className="lg:col-span-7">
-          <ol className="space-y-1.5 text-[10px] text-ocean-900 leading-snug">
+          <ol className="space-y-2 text-[10.5px] text-ocean-900 leading-relaxed list-none">
             {apaReferences.map((ref) => (
-              <li key={ref.id} className="pl-4 -indent-4">
-                <span className="font-bold text-ocean-900">{ref.authors}</span> ({ref.year}).{' '}
-                <span className="italic">{ref.title}</span>.{' '}
-                <span>{ref.source}</span>.{' '}
-                {ref.doi && (
-                  <a
-                    href={ref.doi}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-ocean-600 hover:text-ocean-800 underline font-mono text-[9px] break-all inline-block ml-0.5"
-                  >
-                    {ref.doi}
-                  </a>
-                )}
+              <li key={ref.id} className="pl-5 -indent-5">
+                {renderAPA7(ref)}
               </li>
             ))}
           </ol>

@@ -17,10 +17,6 @@ export const App: React.FC = () => {
   const [centerMode, setCenterMode] = useState<'3d' | 'static'>('3d');
   const [viewMode, setViewMode] = useState<'a1' | 'responsive'>('a1');
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="min-h-screen bg-[#E5EDF3] py-2 md:py-6 px-1 md:px-4 flex flex-col items-center">
       {/* ---------------- TOP CONTROL BAR (NO-PRINT) ---------------- */}
@@ -28,14 +24,7 @@ export const App: React.FC = () => {
         <div className="flex items-center gap-3">
           <span className="font-extrabold text-ocean-950 font-heading flex items-center gap-1.5 text-sm">
             <Sparkles className="w-4 h-4 text-coral" />
-            ACADEMIC POSTER SUITE
-          </span>
-          <span className="text-slate-300">|</span>
-          <span className="bg-ocean-100 text-ocean-800 font-bold px-2.5 py-0.5 rounded text-[11px] font-heading">
-            ISO 216 A1 LANDSCAPE (841 × 594 mm)
-          </span>
-          <span className="text-slate-muted hidden md:inline text-[11px]">
-            Astana IT University • Pedagogy of Higher Education
+            THE ICEBERG OF LEARNING
           </span>
         </div>
 
@@ -135,7 +124,6 @@ export const App: React.FC = () => {
       >
         {/* Full-Width Header */}
         <PosterHeader
-          onPrint={handlePrint}
           activeLevel={activeLevel}
           onResetLevel={() => setActiveLevel(null)}
         />
@@ -176,10 +164,7 @@ export const App: React.FC = () => {
         <PosterFooter />
       </main>
 
-      {/* Bottom Legal / Academic Footer */}
-      <div className="no-print mt-3 text-center text-xs text-slate-muted">
-        <span>© 2026 Astana IT University • Master's in Computer Science • Higher Education Pedagogy • Group SSE-2601</span>
-      </div>
+
     </div>
   );
 };

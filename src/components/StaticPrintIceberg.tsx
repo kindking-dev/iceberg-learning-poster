@@ -67,3 +67,4 @@ export const StaticPrintIceberg: React.FC = () => {
     </div>
   );
 };
+

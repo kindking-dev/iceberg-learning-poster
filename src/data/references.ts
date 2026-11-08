@@ -14,8 +14,9 @@ export const apaReferences: ReferenceItem[] = [
     id: "freire2000",
     authors: "Freire, P.",
     year: 2000,
-    title: "Pedagogy of the oppressed (30th anniversary ed.)",
+    title: "Pedagogy of the oppressed",
     source: "Continuum",
+    edition: "30th anniversary ed.",
   },
   {
     id: "grabinger1995",
@@ -36,4 +37,3 @@ export const apaReferences: ReferenceItem[] = [
     url: "https://doi.org/10.4324/9781003054160"
   }
 ];
-

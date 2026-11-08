@@ -9,6 +9,7 @@ export interface ReferenceItem {
   year: number;
   title: string;
   source: string;
+  edition?: string;
   doi?: string;
   url?: string;
 }
