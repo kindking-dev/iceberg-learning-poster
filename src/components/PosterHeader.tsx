@@ -23,12 +23,12 @@ export const PosterHeader: React.FC<PosterHeaderProps> = ({
     <header className="w-full bg-white/95 backdrop-blur-xl border border-ocean-200/90 px-6 py-4 rounded-2xl shadow-subtle mb-4 relative overflow-hidden">
       {/* Top Academic Context Strip */}
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs tracking-wider uppercase font-semibold text-slate-muted border-b border-ocean-100 pb-2 mb-3">
-        <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-ocean-900 text-white font-bold text-[10.5px]">
-            <Compass className="w-3.5 h-3.5 text-teal-soft" />
+        <div className="flex flex-wrap items-center gap-2 min-w-0">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-ocean-900 text-white font-bold text-[10.5px] whitespace-nowrap shrink-0">
+            <Compass className="w-3.5 h-3.5 text-teal-soft shrink-0" />
             {posterMetadata.institution}
           </span>
-          <span className="text-ocean-800 font-bold">{posterMetadata.course}</span>
+          <span className="text-ocean-800 font-bold whitespace-nowrap">{posterMetadata.course}</span>
         </div>
 
         {/* Action Controls: Audio Toggle only */}

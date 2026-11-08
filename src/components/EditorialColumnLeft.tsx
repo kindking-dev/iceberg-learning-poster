@@ -10,15 +10,15 @@ export const EditorialColumnLeft: React.FC = () => {
     <div className="flex flex-col space-y-3.5 h-full">
       {/* ---------------- SECTION 1: INTRODUCTION & BACKGROUND ---------------- */}
       <section className="bg-white/95 backdrop-blur-md rounded-2xl border border-ocean-200/90 p-4 shadow-subtle">
-        {/* Section Header */}
-        <div className="flex items-center justify-between pb-2 border-b border-ocean-100 mb-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-ocean-600 inline-block" />
-            <h2 className="text-xs font-black font-heading text-ocean-950 uppercase tracking-wider">
+        {/* Section Header — stacked to prevent badge overflow */}
+        <div className="pb-2 border-b border-ocean-100 mb-3">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="w-2.5 h-2.5 rounded-full bg-ocean-600 inline-block shrink-0" />
+            <h2 className="text-[10.5px] font-black font-heading text-ocean-950 uppercase tracking-wide leading-tight">
               SECTION 1 • INTRODUCTION & PEDAGOGICAL CONTEXT
             </h2>
           </div>
-          <span className="text-[10px] font-bold text-coral-dark bg-coral-light px-2 py-0.5 rounded border border-coral/30 uppercase">
+          <span className="inline-block text-[9.5px] font-bold text-coral-dark bg-coral-light px-2 py-0.5 rounded border border-coral/30 uppercase">
             Pedagogical Significance
           </span>
         </div>
@@ -34,7 +34,7 @@ export const EditorialColumnLeft: React.FC = () => {
               <p className="text-xs font-black text-ocean-950 leading-snug mt-0.5">
                 "{posterMetadata.introScenario.hook}"
               </p>
-              <p className="text-[10px] text-slate-muted mt-1 leading-tight italic">
+              <p className="text-[9.5px] text-slate-muted mt-1 leading-tight italic">
                 {posterMetadata.introScenario.context}
               </p>
             </div>
@@ -60,14 +60,15 @@ export const EditorialColumnLeft: React.FC = () => {
 
       {/* ---------------- THEORETICAL FOUNDATION: JOHN BIGGS ---------------- */}
       <section className="bg-white/95 backdrop-blur-md rounded-2xl border border-ocean-200/90 p-4 shadow-subtle">
-        <div className="flex items-center justify-between pb-2 border-b border-ocean-100 mb-2">
-          <div className="flex items-center gap-1.5">
-            <BookOpen className="w-3.5 h-3.5 text-ocean-600" />
-            <h3 className="text-xs font-bold font-heading text-ocean-950 uppercase">
+        {/* Header: stacked */}
+        <div className="pb-2 border-b border-ocean-100 mb-2">
+          <div className="flex items-center gap-1.5 mb-1">
+            <BookOpen className="w-3.5 h-3.5 text-ocean-600 shrink-0" />
+            <h3 className="text-[10.5px] font-bold font-heading text-ocean-950 uppercase leading-tight">
               {biggsTheory.scholar} ({biggsTheory.year})
             </h3>
           </div>
-          <span className="text-[9.5px] font-bold font-heading px-2 py-0.5 rounded bg-ocean-100 text-ocean-800 border border-ocean-200">
+          <span className="inline-block text-[9.5px] font-bold font-heading px-2 py-0.5 rounded bg-ocean-100 text-ocean-800 border border-ocean-200">
             {biggsTheory.concept}
           </span>
         </div>
@@ -79,31 +80,31 @@ export const EditorialColumnLeft: React.FC = () => {
         {/* Connected Alignment Diagram */}
         <div className="bg-gradient-to-r from-ocean-50/90 via-white to-pale-ice p-2.5 rounded-xl border border-ocean-200/80 mb-2.5">
           <div className="text-[9px] uppercase font-bold text-slate-muted tracking-wider mb-1.5 flex items-center justify-between font-heading">
-            <span>Constructive Alignment Architecture</span>
-            <span className="text-teal-dark font-semibold">Tripartite Linkage</span>
+            <span>Constructive Alignment</span>
+            <span className="text-teal-dark font-semibold">Tripartite</span>
           </div>
 
           <div className="grid grid-cols-3 gap-1.5 text-center text-[10px]">
             <div className="p-1.5 bg-white rounded-lg border border-ocean-200 shadow-xs">
-              <span className="font-extrabold text-ocean-900 block font-heading text-[9.5px]">
-                INTENDED OUTCOMES
+              <span className="font-extrabold text-ocean-900 block font-heading text-[9px]">
+                OUTCOMES
               </span>
-              <span className="text-[8.5px] text-slate-muted block mt-0.5">High-order mastery</span>
+              <span className="text-[8px] text-slate-muted block mt-0.5">High-order mastery</span>
             </div>
 
             <div className="p-1.5 bg-white rounded-lg border border-teal-soft/40 shadow-xs relative">
-              <span className="font-extrabold text-ocean-900 block font-heading text-[9.5px]">
-                TEACHING ACTIVITIES
+              <span className="font-extrabold text-ocean-900 block font-heading text-[9px]">
+                TEACHING
               </span>
-              <span className="text-[8.5px] text-slate-muted block mt-0.5">Active problem-solving</span>
+              <span className="text-[8px] text-slate-muted block mt-0.5">Active problem-solving</span>
               <ArrowRight className="w-2.5 h-2.5 text-ocean-400 absolute -right-1.5 top-1/2 -translate-y-1/2 hidden md:block" />
             </div>
 
             <div className="p-1.5 bg-white rounded-lg border border-coral/40 shadow-xs">
-              <span className="font-extrabold text-ocean-900 block font-heading text-[9.5px]">
-                ASSESSMENT METHODS
+              <span className="font-extrabold text-ocean-900 block font-heading text-[9px]">
+                ASSESSMENT
               </span>
-              <span className="text-[8.5px] text-slate-muted block mt-0.5">Authentic application</span>
+              <span className="text-[8px] text-slate-muted block mt-0.5">Authentic application</span>
             </div>
           </div>
         </div>
@@ -115,7 +116,7 @@ export const EditorialColumnLeft: React.FC = () => {
             <span className="text-[9.5px] font-bold uppercase text-coral-dark font-heading block">
               Critical Pedagogical Question:
             </span>
-            <span className="font-extrabold italic text-ocean-950">
+            <span className="font-extrabold italic text-ocean-950 text-[10.5px]">
               "{biggsTheory.criticalQuestion}"
             </span>
           </div>
@@ -124,14 +125,15 @@ export const EditorialColumnLeft: React.FC = () => {
 
       {/* ---------------- THEORETICAL FOUNDATION: PAULO FREIRE ---------------- */}
       <section className="bg-white/95 backdrop-blur-md rounded-2xl border border-ocean-200/90 p-4 shadow-subtle">
-        <div className="flex items-center justify-between pb-2 border-b border-ocean-100 mb-2">
-          <div className="flex items-center gap-1.5">
-            <BookOpen className="w-3.5 h-3.5 text-coral" />
-            <h3 className="text-xs font-bold font-heading text-ocean-950 uppercase">
+        {/* Header: stacked */}
+        <div className="pb-2 border-b border-ocean-100 mb-2">
+          <div className="flex items-center gap-1.5 mb-1">
+            <BookOpen className="w-3.5 h-3.5 text-coral shrink-0" />
+            <h3 className="text-[10.5px] font-bold font-heading text-ocean-950 uppercase leading-tight">
               {freireTheory.scholar} ({freireTheory.year})
             </h3>
           </div>
-          <span className="text-[9.5px] font-bold font-heading px-2 py-0.5 rounded bg-coral-light text-coral-dark border border-coral/30">
+          <span className="inline-block text-[9.5px] font-bold font-heading px-2 py-0.5 rounded bg-coral-light text-coral-dark border border-coral/30">
             Banking vs. Problem-Posing
           </span>
         </div>
@@ -140,7 +142,7 @@ export const EditorialColumnLeft: React.FC = () => {
           {freireTheory.coreIdea}
         </p>
 
-        {/* Concept Contrast Pill */}
+        {/* Concept Contrast */}
         <div className="grid grid-cols-2 gap-2 text-center text-xs my-2">
           <div className="p-2 bg-slate-50 rounded-lg border border-slate-200 text-slate-muted">
             <span className="font-bold block text-[9.5px] uppercase font-heading text-slate-700">
@@ -163,7 +165,7 @@ export const EditorialColumnLeft: React.FC = () => {
             <span className="text-[9.5px] font-bold uppercase text-ocean-700 font-heading block">
               Critical Pedagogical Question:
             </span>
-            <span className="font-extrabold italic text-ocean-950">
+            <span className="font-extrabold italic text-ocean-950 text-[10.5px]">
               "{freireTheory.criticalQuestion}"
             </span>
           </div>
@@ -172,14 +174,15 @@ export const EditorialColumnLeft: React.FC = () => {
 
       {/* ---------------- ASSESSMENT PRINCIPLE: FORMATIVE FEEDBACK LOOP ---------------- */}
       <section className="bg-white/95 backdrop-blur-md rounded-2xl border border-ocean-200/90 p-4 shadow-subtle">
-        <div className="flex items-center justify-between pb-1.5 border-b border-ocean-100 mb-2">
-          <div className="flex items-center gap-1.5">
-            <RefreshCw className="w-3.5 h-3.5 text-teal-soft" />
-            <h3 className="text-xs font-bold font-heading text-ocean-950 uppercase">
+        {/* Header: stacked */}
+        <div className="pb-1.5 border-b border-ocean-100 mb-2">
+          <div className="flex items-center gap-1.5 mb-1">
+            <RefreshCw className="w-3.5 h-3.5 text-teal-soft shrink-0" />
+            <h3 className="text-[10.5px] font-bold font-heading text-ocean-950 uppercase leading-tight">
               Formative Feedback Principle
             </h3>
           </div>
-          <span className="text-[9px] font-bold text-teal-dark bg-teal-light px-2 py-0.5 rounded border border-teal-soft/30 uppercase">
+          <span className="inline-block text-[9px] font-bold text-teal-dark bg-teal-light px-2 py-0.5 rounded border border-teal-soft/30 uppercase">
             Assessment as Learning
           </span>
         </div>

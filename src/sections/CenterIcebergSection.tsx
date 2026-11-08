@@ -18,30 +18,30 @@ export const CenterIcebergSection: React.FC<CenterIcebergSectionProps> = ({
   return (
     <div className="flex flex-col h-full bg-white/95 backdrop-blur-xl rounded-2xl border-2 border-ocean-300/80 p-4 shadow-card relative overflow-hidden">
       {/* Top Section Header */}
-      <div className="flex items-center justify-between pb-2 border-b border-ocean-200 mb-3 z-10">
-        <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded-lg bg-ocean-900 text-white shadow-xs">
+      <div className="flex items-start justify-between pb-2 border-b border-ocean-200 mb-3 z-10 gap-2 flex-wrap">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="p-1.5 rounded-lg bg-ocean-900 text-white shadow-xs shrink-0">
             <Compass className="w-4 h-4 text-teal-soft" />
           </div>
-          <div>
+          <div className="min-w-0">
             <span className="text-[10px] uppercase font-bold tracking-wider text-ocean-600 block font-heading">
               SECTION 2 • THE CENTRAL PEDAGOGICAL METAPHOR
             </span>
-            <h2 className="text-base font-black font-heading text-ocean-950 uppercase tracking-tight">
+            <h2 className="text-sm font-black font-heading text-ocean-950 uppercase tracking-tight leading-tight">
               THE FIVE DIMENSIONS OF COGNITIVE DEPTH
             </h2>
           </div>
         </div>
 
-        {/* Observable Evidence Ratio */}
-        <div className="flex items-center gap-2 text-xs">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral-light border border-coral/30 text-coral-dark font-extrabold text-[10px] font-heading">
-            <Eye className="w-3.5 h-3.5 text-coral" />
-            ~10% VISIBLE (EXAM PERFORMANCE)
+        {/* Observable Evidence Ratio — stacked vertically to prevent overflow */}
+        <div className="flex flex-col gap-1 text-xs shrink-0">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-coral-light border border-coral/30 text-coral-dark font-extrabold text-[9.5px] font-heading whitespace-nowrap">
+            <Eye className="w-3 h-3 text-coral shrink-0" />
+            ~10% VISIBLE (EXAM)
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ocean-100 border border-ocean-200 text-ocean-800 font-extrabold text-[10px] font-heading">
-            <EyeOff className="w-3.5 h-3.5 text-ocean-600" />
-            ~90% SUBMERGED (MEANINGFUL LEARNING)
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-ocean-100 border border-ocean-200 text-ocean-800 font-extrabold text-[9.5px] font-heading whitespace-nowrap">
+            <EyeOff className="w-3 h-3 text-ocean-600 shrink-0" />
+            ~90% SUBMERGED
           </span>
         </div>
       </div>

@@ -16,6 +16,30 @@
   z-index: 50;
 }
 
+/* Global overflow guard for all sections inside the poster */
+.poster-canvas section,
+.poster-canvas header,
+.poster-canvas footer {
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure flex children don't push outside boundaries */
+.poster-canvas h1,
+.poster-canvas h2,
+.poster-canvas h3,
+.poster-canvas h4 {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Badge/pill elements: never overflow their container */
+.poster-canvas span[class*="rounded"] {
+  max-width: 100%;
+}
+
 .academic-card {
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(40, 126, 173, 0.16);
