@@ -1,0 +1,87 @@
+/* Poster-specific layout and visual styling */
+.poster-canvas {
+  background: radial-gradient(120% 80% at 50% 10%, #FFFFFF 0%, #F5FAFC 45%, #EAF4F8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-canvas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #287EAD 0%, #55B6AA 50%, #F28C65 100%);
+  z-index: 50;
+}
+
+.academic-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(40, 126, 173, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(18, 52, 90, 0.04);
+  transition: all 0.2s ease;
+}
+
+.academic-card:hover {
+  border-color: rgba(40, 126, 173, 0.35);
+  box-shadow: 0 6px 20px rgba(18, 52, 90, 0.07);
+}
+
+.ice-panel {
+  background: linear-gradient(135deg, rgba(234, 244, 248, 0.85) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border: 1px solid rgba(169, 215, 236, 0.5);
+  border-radius: 10px;
+}
+
+.annotation-badge {
+  font-family: var(--font-heading);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.annotation-badge-coral {
+  background: #FCECE6;
+  color: #D86B42;
+  border: 1px solid rgba(242, 140, 101, 0.3);
+}
+
+.annotation-badge-teal {
+  background: #E6F6F4;
+  color: #2D756C;
+  border: 1px solid rgba(85, 182, 170, 0.35);
+}
+
+.annotation-badge-ocean {
+  background: #EAF4F8;
+  color: #164C72;
+  border: 1px solid rgba(40, 126, 173, 0.25);
+}
+
+/* Scientific waterline visual effect */
+.waterline-rule {
+  position: relative;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(40, 126, 173, 0.2) 0%, rgba(40, 126, 173, 0.8) 50%, rgba(40, 126, 173, 0.2) 100%);
+}
+
+.waterline-rule::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: rgba(169, 215, 236, 0.7);
+  filter: blur(1px);
+}
+

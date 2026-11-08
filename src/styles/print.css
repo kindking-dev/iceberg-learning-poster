@@ -1,0 +1,56 @@
+@page {
+  size: 841mm 594mm landscape;
+  margin: 0;
+}
+
+@media print {
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    width: 841mm !important;
+    height: 594mm !important;
+    min-height: 594mm !important;
+    max-height: 594mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #F7FAFC !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .poster-container {
+    width: 841mm !important;
+    height: 594mm !important;
+    max-width: 841mm !important;
+    max-height: 594mm !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 10mm 12mm 8mm 12mm !important;
+    box-sizing: border-box !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* Ensure root container doesn't create extra scrolling or page 2 */
+  #root {
+    width: 841mm !important;
+    height: 594mm !important;
+    overflow: hidden !important;
+  }
+}

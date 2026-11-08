@@ -1,0 +1,18 @@
+:root {
+  --color-arctic-white: #F7FAFC;
+  --color-deep-navy: #12345A;
+  --color-ocean-blue: #287EAD;
+  --color-ice-blue: #A9D7EC;
+  --color-deep-ocean: #164C72;
+  --color-soft-teal: #55B6AA;
+  --color-warm-coral: #F28C65;
+  --color-slate-blue: #61788C;
+  --color-pale-ice: #EAF4F8;
+  
+  --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --poster-width: 841mm;
+  --poster-height: 594mm;
+}
+
